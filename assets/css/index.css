@@ -1,0 +1,82 @@
+.layui-footer {
+    /* 底部文字版权居中对齐 */
+    text-align: center;
+    font-size: 12px;
+}
+
+.iconfont {
+    margin-right: 8px;
+}
+
+.layui-icon {
+    margin: 0 8px 20px;
+}
+
+
+/* 覆盖内容主体区域所有空白部分 */
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 如果不隐藏就会有两个进度条 body设置溢出隐藏就只有一个进度条 */
+
+.layui-body {
+    overflow: hidden;
+}
+
+
+/* 取消a链接刷新时的动画 点击会变蓝的动画 */
+
+a {
+    transition: none!important;
+}
+
+
+/* 左侧导航栏图片居中 */
+
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    /* 禁止里面的内容 欢迎***被选中 */
+    user-select: none;
+}
+
+
+/* 添加左侧头像下面边框 */
+
+.layui-side-scroll .userinfo {
+    border-bottom: 1px solid #282b33;
+}
+
+
+/* 默认头像大小 */
+
+.layui-nav-img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* 文字头像样式 */
+
+.text-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #009688;
+    /* 纵向居中 */
+    line-height: 40px;
+    /* 横向居中 */
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}

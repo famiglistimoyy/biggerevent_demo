@@ -43,6 +43,8 @@ function submitData(e) {
             layui.layer.msg(res.message);
             //如果注册失败 return出去 不执行后面的代码
             if (res.status != 0) return;
+
+            //将注册表单的用户名密码自动填充到登录表单相应的输入框
             //清空注册表单???$('#regForm')[0]和$('#regForm').serialize()一样 打印不出来？
             $('#regForm')[0].reset();
             //模拟点击“去登录”事件
@@ -68,14 +70,15 @@ function loginData(e) {
         success(res) {
             console.log(res);
             //{status: 0, message: "登录成功！", token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZC…cwNH0.zgVVjX63YXoou1wTo3geLYVHGwg-10PowDyOhmre3T4"}
+            if (res.status !== 0) return layui.layer.msg(res.message);
             layui.layer.msg(res.message, {
-                icon: 6,
-                time: 1500
+                icon: 6, //弹出样式
+                time: 1500 //弹出消息层停留时间1.5s
             }, function() {
                 localStorage.setItem('usertoken', res.token);
                 location.href = '/index.html';
-                //内部跳转location.href 
-                //iframe 相当于内嵌浏览器 跳转用window.top或者window.parent
+                // 内部跳转location.href 
+                // iframe 相当于内嵌浏览器 跳转用window.top或者window.parent
             })
         }
     })
